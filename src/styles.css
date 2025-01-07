@@ -1,0 +1,117 @@
+@import url("leaflet/dist/leaflet.css");
+
+:root {
+  --dark-grey: #2b2b2b;
+  --light-grey: #969696;
+  --white: #fff;
+  --black: #000;
+
+  --rubik: "Rubik", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--rubik);
+}
+
+.page-container {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(280px, calc(100% - 280px));
+}
+
+.search-section h1 {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.search-section {
+  background: url("./assets/illustrations/pattern-bg-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: center;
+  padding: 26px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-container input {
+  width: 480px;
+  height: 48px;
+  color: var(--dark-grey);
+  font-weight: 500;
+  outline: none;
+  margin: 20px 0;
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  transition: all ease 0.2s;
+}
+.search-container input:focus {
+  box-shadow: 0 0 8px #ffffff85;
+}
+.search-container input::placeholder {
+  color: var(--light-grey);
+  font-weight: 600;
+  opacity: 75%;
+  font-size: 15px;
+}
+.search-container button {
+  height: 48px;
+  border: none;
+  width: 45px;
+  border-radius: 0 12px 12px 0;
+  background: var(--black);
+  line-height: 1px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  z-index: 1;
+}
+.search-container button:hover {
+  box-shadow: 0 0 8px #00000025;
+}
+.search-container button img {
+  width: 9px;
+  height: auto;
+}
+
+.search-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+}
+
+.leaflet-container {
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--white);
+}
+
+.empty-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-map h2 {
+  color: var(--light-grey);
+}
+
+@media only screen and (max-width: 530px) {
+  .search-container input {
+    width: 380px;
+    height: 48px;
+  }
+}
